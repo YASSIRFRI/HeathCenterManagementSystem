@@ -1,0 +1,44 @@
+@startuml
+
+title Pharmacy Management System
+
+actor User as Employee
+
+rectangle Dashboard  {
+(Run Option) as (Proc1)
+usecase (View Medicine Inventory) as UC1
+
+usecase (View Analytics Report) as UC5
+usecase (View Predictions) as UC6
+usecase (Log Out) as UC4
+usecase (Set Alert On Medicine) as UC8
+usecase (View Alerts) as UC9
+}
+
+rectangle "Authentication Manager" {
+(Login) 
+(Verify Credentials) as verify
+(Reject Access) as reject
+(Grant Access)  as grant
+}
+
+Employee -right-> (Login) : Provide Credentials
+(Login) -right-> verify : Verify Employee Credentials
+
+reject ..> verify : <<extends>>
+grant ..> verify : <<extends>>
+
+
+(Proc1) .left.> verify :<<include>>
+(Proc1) --> UC1 : View Inventory
+(Proc1) -right-> (UC9)
+(UC1) <.. (Add Medicine) : <<extend>>
+(Add Medicine) ..> (Provide Medicine Info) :<<include>>
+(UC1) <.. (Update Medicine Quantity) : <<extend>>
+(Proc1) --> UC5 : Generate Report
+(Export Report ) ..> UC5:<<extend>>
+(Proc1) --> UC6 : Predict Running Out
+(Proc1) --> UC4 : Log Out
+(Proc1) --> UC8 : Get Alert
+
+@enduml
