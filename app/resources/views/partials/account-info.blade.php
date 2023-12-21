@@ -2,7 +2,7 @@
 
 <div class="medicine-info">
     <h3 class="mb-4">Medicine Stock</h3>
-    <div class="medicine-list" style="height: 600px; overflow-y: auto;">
+    <div class="medicine-list" style="height: 300px; overflow-y: auto;">
         @foreach ($medicines as $medicine)
         <div class="card mb-3" style="max-width: 500px;"> 
             <div class="row g-0">

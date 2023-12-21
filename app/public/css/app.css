@@ -1,160 +1,221 @@
-/* app.css */
+/* Reset some basic elements */
 
-
-/* General resets */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+html,
 body,
+div,
+span,
+applet,
+object,
+iframe,
 h1,
 h2,
 h3,
 h4,
 h5,
 h6,
-p {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
 }
 
 
-/* Primary color palette */
+/* HTML5 display-role reset for older browsers */
 
- :root {
-    --dark-blue: #546A7B;
-    --light-blue: #62929E;
-    --light-grey: #C6C5B9;
-    --off-white: #FDFDFF;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
 }
-
-
-/* Background colors */
 
 body {
-    background-color: var(--off-white);
+    line-height: 1;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #FDFDFF;
+    color: #546A7B;
+    /* Primary text color */
+}
+
+ol,
+ul {
+    list-style: none;
 }
 
 
-/* Sidebar styles */
+/* Set up the responsive grid system */
 
-nav.sidebar {
-    background-color: var(--dark-blue);
-    color: var(--off-white);
+.container-fluid {
+    width: 100%;
+    padding-right: var(--bs-gutter-x, .75rem);
+    padding-left: var(--bs-gutter-x, .75rem);
+    margin-right: auto;
+    margin-left: auto;
 }
 
-nav.sidebar a {
-    color: var(--off-white);
-    transition: color 0.3s ease;
-}
-
-nav.sidebar a:hover {
-    color: var(--light-blue);
-}
-
-
-/* Sidebar user info */
-
-nav.sidebar .text-center {
-    border-bottom: 1px solid var(--light-grey);
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
 }
 
 
-/* Medicine cards */
+/* Sidebar Styles */
 
-.medicine-info {
-    color: var(--dark-blue);
+.sidebar {
+    background-color: #546A7B;
+    /* Sidebar background color */
+    color: #FDFDFF;
+    min-height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    /* Make sure the sidebar is above other content */
 }
 
-.medicine-list {
-    padding: 15px;
+
+/* Sidebar link styles */
+
+.sidebar .nav-link {
+    color: #C6C5B9;
+    /* Inactive link color */
+    transition: color 0.3s ease-in-out;
 }
+
+.sidebar .nav-link.active,
+.sidebar .nav-link:hover {
+    color: #FDFDFF;
+    /* Active link color */
+    background-color: #62929E;
+    /* Active link background color */
+    border-radius: 0.25rem;
+}
+
+
+/* Main Content Styles */
+
+.main-content {
+    /* margin-left: 250px; */
+    /* Same as sidebar width */
+    padding: 1rem;
+    background-color: #FDFDFF;
+    /* Main content background color */
+    min-height: 100vh;
+}
+
+
+/* Card Styles */
 
 .card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #fff;
+    border: none;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgb(0 0 0 / 10%);
+    transition: all 0.2s ease-in-out;
+    margin-bottom: 2rem;
 }
 
 .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(-0.25rem);
+    box-shadow: 0 6px 12px rgb(0 0 0 / 15%);
 }
 
 
-/* Card images */
+/* Responsive Breakpoints */
 
-.card img {
-    transition: opacity 0.3s ease;
-}
-
-.card img:hover {
-    opacity: 0.8;
-}
-
-
-/* Text colors */
-
-.card-title,
-.card-text {
-    color: var(--dark-blue);
-}
-
-.card-text .text-danger {
-    color: #ff0000;
-}
-
-
-/* Responsive design */
-
-@media (max-width: 768px) {
-    nav.sidebar {
+@media (max-width: 991.98px) {
+    .sidebar {
         width: 100%;
         height: auto;
+        position: relative;
     }
-    .card {
-        max-width: 100%;
-    }
-}
-
-
-/* Additional responsive adjustments */
-
-@media (max-width: 576px) {
-    .row {
-        flex-direction: column;
-    }
-    .medicine-list {
-        height: auto;
-        overflow-y: initial;
-    }
-    .card {
-        display: block;
-        margin-bottom: 20px;
+    .main-content {
+        margin-left: 0;
     }
 }
 
-
-/* Scrollable container */
-
-.scrollable-container {
-    scrollbar-width: thin;
-    scrollbar-color: var(--light-blue) var(--off-white);
-}
-
-
-/* Custom scrollbar for Webkit browsers */
-
-.scrollable-container::-webkit-scrollbar {
-    width: 5px;
-}
-
-.scrollable-container::-webkit-scrollbar-track {
-    background: var(--off-white);
-}
-
-.scrollable-container::-webkit-scrollbar-thumb {
-    background-color: var(--light-blue);
-    border-radius: 20px;
-    border: 3px solid var(--off-white);
+@media (max-width: 767.98px) {
+    .sidebar .dropdown-menu {
+        position: static;
+        /* Dropdowns should not be absolutely positioned on small screens */
+    }
 }
