@@ -10,13 +10,21 @@ use Illuminate\Support\Facades\Hash;
 class UserController extends Controller
 {
     public function login(Request $request){
-        $credentials = $request->only('email', 'password');
-        Log::info('Login Attempt - Email: ' . $credentials['email'] . ', Password: ' . $credentials['password']);
-        $credentials["password"]=Hash::make($credentials["password"]);
-        if (Auth::attempt($credentials)) {
-            return redirect()->intended('dashboard');
+        $credentials=array(
+            'email'=>$request->email,
+            'password'=>$request->password
+        );
+        var_dump($credentials);
+        Log::info('Login Attempt - Email: ' . $credentials['email'] . ', Password: ' . $credentials['password']."Encrypted Password: " . Hash::make($credentials['password']));
+        $hashed='$2y$10$zsGlIG/1MeGqimKQZZkcNek7cd/VueeI5qdExbPCWevNSsLTA8h32';
+        if (Hash::check($credentials['password'], $hashed)) {
+            Log::info('Login Successful - Email: ' . $credentials['email'] . ', Password: ' . $credentials['password']);
         }
-        return redirect('/')->with('error', 'Oppes! You have entered invalid credentials');
+        if (Auth::attempt($credentials)) {
+            Log::info('Login Successful - Email: ' . $credentials['email'] . ', Password: ' . $credentials['password']);
+            return redirect()->route('dashboard');
+        }
+        return "Failure";
     }
 
 

@@ -22,8 +22,20 @@ Route::get('/', function () {
 |
 */
 
+<<<<<<< HEAD
 // Route::get('/', function () {
 //     return view('dashboard');
 // })->name("dashboard");
+=======
+Route::get('/', function () {
+    return view('login');
+})->name("login");
+
+Route::post('/', [UserController::class, 'login']);
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->name("dashboard");
+
+>>>>>>> 505babf2ccb5dea8209b0be90a7572dd8218f141
 
 Route::post('/', [UserController::class, 'dashboard']);

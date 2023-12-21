@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Hashing\BcryptHasher;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
@@ -19,7 +20,7 @@ class UsersTableSeeder extends Seeder
         DB::table('users')->insert([
             'username' => 'yassir fri',
             'email' => 'yassirfri318@gmail.com',
-            'password' => Hash::make('password'),
+            'password' => bcrypt('password'),
         ]);
     }
 }
