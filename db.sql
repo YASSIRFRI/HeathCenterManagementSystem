@@ -9,7 +9,7 @@ CREATE TABLE Users (
     UserID INT PRIMARY KEY,
     username VARCHAR(255) NOT NULL,
     email VARCHAR(255) NOT NULL,
-    Password VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL,
     RoleID INT,
     FOREIGN KEY (RoleID) REFERENCES Roles(RoleID)
 );
@@ -34,7 +34,6 @@ CREATE TABLE Medicines (
 
 CREATE TABLE Prescriptions (
     PrescriptionID INT PRIMARY KEY,
-    PatientName VARCHAR(255) NOT NULL,
     MedicineID INT,
     Quantity INT NOT NULL,
     PrescriptionDate DATE,

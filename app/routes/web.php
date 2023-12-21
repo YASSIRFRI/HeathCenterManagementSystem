@@ -19,5 +19,8 @@ Route::get('/', function () {
 })->name("login");
 
 Route::post('/', [UserController::class, 'login']);
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->name("dashboard");
 
 

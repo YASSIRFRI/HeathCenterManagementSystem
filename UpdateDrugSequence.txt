@@ -1,0 +1,53 @@
+@startuml
+
+skin rose
+
+title "Update Drug - Sequence Diagram"
+
+actor Pharmacist
+boundary "Pharmacy System" as PharmacySystem
+control "Drug Manager" as DrugManager
+entity "Drug Database" as DrugDB
+
+Pharmacist -> PharmacySystem: Log in
+activate PharmacySystem
+
+PharmacySystem -> DrugManager: Request Drug Update
+activate DrugManager
+
+DrugManager -> DrugDB: Retrieve Drug Data
+activate DrugDB
+
+DrugDB --> DrugManager: Drug Data
+deactivate DrugDB
+
+DrugManager -> DrugManager: Validate Pharmacist's Access
+alt Access Valid
+  DrugManager -> PharmacySystem: Display Drug Update Form
+  activate PharmacySystem
+
+  Pharmacist -> PharmacySystem: Update Drug Information
+  PharmacySystem -> DrugManager: Submit Updated Drug Data
+  deactivate PharmacySystem
+
+  DrugManager -> DrugDB: Update Drug Information
+  activate DrugDB
+
+  DrugDB --> DrugManager: Update Successful
+  deactivate DrugDB
+
+  DrugManager -> PharmacySystem: Notify Update Success
+  deactivate DrugManager
+
+else Access Invalid
+  DrugManager --> PharmacySystem: Access Denied
+  deactivate DrugManager
+
+  PharmacySystem -> Pharmacist: Display Access Denied Message
+  deactivate PharmacySystem
+end
+
+Pharmacist -> PharmacySystem: Log out
+deactivate PharmacySystem
+
+@enduml

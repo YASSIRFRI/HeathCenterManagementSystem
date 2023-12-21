@@ -1,0 +1,37 @@
+@startuml
+
+skin rose
+
+title "Login Process - Sequence Diagram"
+
+actor User
+boundary "Web GUI" as GUI
+control "Authentication Manager" as AuthMgr
+entity "User Database" as UserDB
+
+User -> GUI: Open Login Page
+activate GUI
+
+GUI -> AuthMgr: Enter Credentials
+activate AuthMgr
+
+AuthMgr -> UserDB: Request User Data
+activate UserDB
+
+UserDB --> AuthMgr: User Data
+deactivate UserDB
+
+AuthMgr -> AuthMgr: Validate Credentials
+alt Credentials Valid
+  AuthMgr --> GUI: Authentication Successful
+  deactivate AuthMgr
+  GUI -> GUI: Redirect to Dashboard
+else Credentials Invalid
+  AuthMgr --> GUI: Authentication Failed
+  deactivate AuthMgr
+  GUI -> GUI: Display Error Message
+end
+
+deactivate GUI
+
+@enduml
