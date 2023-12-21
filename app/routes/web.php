@@ -3,6 +3,14 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 
+use App\Models\Medicine;
+
+Route::get('/', function () {
+    $medicines = Medicine::all();
+    return view('dashboard', ['medicines' => $medicines]);
+})->name("dashboard");
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,10 +22,8 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::get('/', function () {
-    return view('login');
-})->name("login");
+// Route::get('/', function () {
+//     return view('dashboard');
+// })->name("dashboard");
 
-Route::post('/', [UserController::class, 'login']);
-
-
+Route::post('/', [UserController::class, 'dashboard']);
