@@ -7,19 +7,28 @@
 <div class="container-fluid py-4">
     <div class="row">
         <!-- Main Dashboard Content -->
-        <div class="col-md-18 ms-auto">
+        <div class="col-md-12 ms-auto">
             <!-- Welcome Box -->
-            <div class="welcome-box mb-4 p-4 bg-white rounded shadow-sm">
-                <h2>Welcome to MedCheck!</h2>
-            </div>
+            @include('partials.welcome-box')
 
-            <!-- Dynamically include Account Information Boxes -->
-            @include('partials.account-info')
+            <!-- Inventory Overview -->
+            @include('partials.inventory-overview')
 
-            <!-- Dynamically include Help Section -->
-            @include('partials.help-section')
+            <!-- Expiry Tracking -->
+            @include('partials.expiry-tracking')
 
-            <!-- Additional content can be added here -->
+            <!-- Account Information and Help Section Row -->
+<div class="row">
+    <!-- Account Information Boxes -->
+    <div class="col-lg-7 col-md-7 col-sm-12">
+        @include('partials.account-info')
+    </div>
+
+    <!-- Help Section -->
+    <div class="col-lg-5 col-md-5 col-sm-12">
+        @include('partials.help-section')
+    </div>
+</div>
         </div>
     </div>
 </div>
