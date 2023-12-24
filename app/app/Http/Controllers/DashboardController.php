@@ -16,12 +16,10 @@ class DashboardController extends Controller
 
         $outOfStockMedicines = Medicine::where('StockQuantity', 0)->count();
 
-
         $medicinesExpiringSoon = Medicine::where('ExpiryDate', '<=', Carbon::now()->addDays(30))
                                           ->orderBy('ExpiryDate', 'asc')
                                           ->get();
         $medicines = Medicine::all();
-
         return view('dashboard', compact(
             'totalMedicines',
             'lowStockMedicines',

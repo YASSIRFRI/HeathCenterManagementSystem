@@ -2,12 +2,12 @@
 
 <nav class="sidebar">
     <div class="sidebar-profile text-center">
-        @auth
+        @if (Auth::check())
             <img src="{{ Auth::user()->profile_pic_url }}" alt="Profile Picture" class="profile-pic img-fluid rounded-circle mb-3">
             <h3 class="username">{{ Auth::user()->username }}</h3>
         @else
             <p>User not found</p>
-        @endauth
+        @endif
     </div>
     <hr>
     <ul class="nav flex-column mb-auto">

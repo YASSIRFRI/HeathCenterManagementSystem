@@ -61,7 +61,6 @@ CREATE TABLE EquipmentLoan (
 
 ------------------------------
 
-
 INSERT INTO Medicines (Name, Manufacturer, TherapeuticClass, StockQuantity, UnitPrice, ExpiryDate, Description) VALUES
 ('Paracetamol', 'Pharma Inc.', 'Analgesic', 100, 0.25, '2025-12-31', 'Used to treat pain and fever.'),
 ('Ibuprofen', 'BestMed', 'Anti-inflammatory', 200, 0.50, '2024-11-30', 'Used for treating pain, fever, and inflammation.'),
