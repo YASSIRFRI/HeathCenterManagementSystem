@@ -1,0 +1,10 @@
+run composer install` to install all dependencies
+
+create database called healthcentermanagementsystem
+
+run `php artisan migrate` to create tables
+
+run nmp install
+run `npm run dev` to compile assets
+run php artisan db:seed to seed the database
+run `php artisan serve` to start the app
