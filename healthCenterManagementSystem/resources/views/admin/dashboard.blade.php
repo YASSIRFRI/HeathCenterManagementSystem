@@ -23,15 +23,12 @@
         <div class="card">
             <div class="card-body">
                 <div class="dash-widget-header">
-                    <span class="dash-widget-icon text-info">
-                        <i class="fa fa-th-large"></i>
-                    </span>
                     <div class="dash-count">
                         <h3>{{$total_categories}}</h3>
                     </div>
                 </div>
                 <div class="dash-widget-info">
-                    <h6 class="text-muted">Available Categories</h6>
+                    <h6 class="text-success">Available Categories</h6>
                 </div>
             </div>
         </div>
@@ -40,15 +37,12 @@
         <div class="card">
             <div class="card-body">
                 <div class="dash-widget-header">
-                    <span class="dash-widget-icon text-danger border-danger">
-                        <i class="fe fe-folder"></i>
-                    </span>
                     <div class="dash-count">
                         <h3>{{$total_expired_products}}</h3>
                     </div>
                 </div>
                 <div class="dash-widget-info">
-                    <h6 class="text-muted">Expired Medicines</h6>
+                    <h6 class="text-danger">Expired Medicines</h6>
                 </div>
             </div>
         </div>
@@ -57,16 +51,12 @@
         <div class="card">
             <div class="card-body">
                 <div class="dash-widget-header">
-                    <span class="dash-widget-icon text-warning border-warning">
-                        <i class="fe fe-users"></i>
-                    </span>
                     <div class="dash-count">
                         <h3>{{\DB::table('users')->count()}}</h3>
                     </div>
                 </div>
                 <div class="dash-widget-info">
-                    
-                    <h6 class="text-muted">System Users</h6>
+                    <h6 class="text-primary">System Users</h6>
                 </div>
             </div>
         </div>

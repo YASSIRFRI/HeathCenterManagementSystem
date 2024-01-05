@@ -1,21 +1,21 @@
-<div class="sidebar" id="sidebar">
-    <div class="sidebar-inner">
+<div class="sidebar bg-success" id="sidebar">
+    <div class="sidebar-inner ">
         <div id="sidebar-menu" class="sidebar-menu">
             <ul>
                 <li class="menu-title"> 
                     <span>Main</span>
                 </li>
                 <li class="{{ route_is('dashboard') ? 'active' : '' }}"> 
-                    <a href="{{route('dashboard')}}"><i class="fas fa-tachometer-alt"></i> <span>Dashboard</span></a>
+                    <a href="{{route('dashboard')}}"><i class="far fa-lightbulb"></i> <span>Dashboard</span></a>
                 </li>
                 @can('view-category')
                 <li class="{{ route_is('categories.*') ? 'active' : '' }}"> 
-                    <a href="{{route('categories.index')}}"><i class="fas fa-layer-group"></i> <span>Categories</span></a>
+                    <a href="{{route('categories.index')}}"><i class="far fa-lightbulb"></i> <span>Categories</span></a>
                 </li>
                 @endcan
                 @can('view-purchase')
                 <li class="submenu">
-                    <a href="#"><i class="fas fa-shopping-cart"></i> <span> Purchase</span> <span class="fas fa-chevron-down"></span></a>
+                    <a href="#"><i class="far fa-lightbulb"></i> <span> Purchase</span> <span class="fas fa-chevron-down"></span></a>
                     <ul style="display: none;">
                         <li><a class="{{ route_is('purchases.*') ? 'active' : '' }}" href="{{route('purchases.index')}}">Purchase</a></li>
                         @can('create-purchase')
@@ -26,7 +26,7 @@
                 @endcan
                 @can('view-products')
 				<li class="submenu">
-					<a href="#"><i class="fe fe-document"></i> <span> Products</span> <span class="fas fa-chevron-down"></span></a>
+					<a href="#"><i class="far fa-lightbulb"></i> <span> Products</span> <span class="fas fa-chevron-down"></span></a>
 					<ul style="display: none;">
 						<li><a class="{{ route_is(('products.*')) ? 'active' : '' }}" href="{{route('products.index')}}">Products</a></li>
 						@can('create-product')<li><a class="{{ route_is('products.create') ? 'active' : '' }}" href="{{route('products.create')}}">Add Product</a></li>@endcan
@@ -37,7 +37,7 @@
 				@endcan
                 @can('view-sales')
 				<li class="submenu">
-					<a href="#"><i class="fe fe-activity"></i> <span> Consumption</span> <span class="fas fa-chevron-down"></span></a>
+					<a href="#"><i class="far fa-lightbulb"></i> <span> Consumption</span> <span class="fas fa-chevron-down"></span></a>
 					<ul style="display: none;">
 						<li><a class="{{ route_is('sales.*') ? 'active' : '' }}" href="{{route('sales.index')}}">Consumption History</a></li>
 					</ul>
@@ -45,7 +45,7 @@
 				@endcan
 				@can('view-supplier')
 				<li class="submenu">
-					<a href="#"><i class="fe fe-user"></i> <span> Supplier</span> <span class="fas fa-chevron-down"></span></a>
+					<a href="#"><i class="far fa-lightbulb"></i> <span> Supplier</span> <span class="fas fa-chevron-down"></span></a>
 					<ul style="display: none;">
 						<li><a class="{{ route_is('suppliers.*') ? 'active' : '' }}" href="{{route('suppliers.index')}}">Supplier</a></li>
 						@can('create-supplier')<li><a class="{{ route_is('suppliers.create') ? 'active' : '' }}" href="{{route('suppliers.create')}}">Add Supplier</a></li>@endcan
@@ -54,7 +54,7 @@
 				@endcan
                 @can('view-access-control')
 				<li class="submenu">
-					<a href="#"><i class="fe fe-lock"></i> <span> Access Control</span> <span class="fas fa-chevron-down"></span></a>
+					<a href="#"><i class="far fa-lightbulb"></i> <span> Access Control</span> <span class="fas fa-chevron-down"></span></a>
 					<ul style="display: none;">
 						@can('view-permission')
 						<li><a class="{{ route_is('permissions.index') ? 'active' : '' }}" href="{{route('permissions.index')}}">Permissions</a></li>
@@ -67,7 +67,7 @@
 				@endcan
                 @can('view-reports')
                 <li class="submenu">
-                    <a href="#"><i class="fas fa-chart-bar"></i> <span> Reports</span> <span class="fas fa-chevron-down"></span></a>
+                    <a href="#"><i class="far fa-lightbulb"></i> <span> Reports</span> <span class="fas fa-chevron-down"></span></a>
                     <ul style="display: none;">
                         <li><a class="{{ route_is('sales.report') ? 'active' : '' }}" href="{{route('sales.report')}}">Consumption History</a></li>
                         <li><a class="{{ route_is('purchases.report') ? 'active' : '' }}" href="{{route('purchases.report')}}">Purchase Report</a></li>
@@ -75,10 +75,10 @@
                 </li>
                 @endcan
                 <li class="{{ route_is('profile') ? 'active' : '' }}"> 
-                    <a href="{{route('profile')}}"><i class="fas fa-user-plus"></i> <span>Profile</span></a>
+                    <a href="{{route('profile')}}"><i class="far fa-lightbulb"></i> <span>Profile</span></a>
                 </li>
                 <li class="{{ route_is('backup.index') ? 'active' : '' }}"> 
-                    <a href="{{route('backup.index')}}"><i class="fas fa-database"></i> <span>Backups</span></a>
+                    <a href="{{route('backup.index')}}"><i class="far fa-lightbulb"></i> <span>Backups</span></a>
                 </li>
             </ul>
         </div>

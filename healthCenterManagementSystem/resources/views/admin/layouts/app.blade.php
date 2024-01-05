@@ -11,17 +11,11 @@
     <link rel="shortcut icon" type="image/x-icon" href="{{!empty(AppSettings::get('favicon')) ? asset('storage/'.AppSettings::get('favicon')) : asset('assets/img/favicon.png')}}">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}">
-    <!-- Fontawesome CSS -->
     <link rel="stylesheet" href="{{asset('assets/plugins/fontawesome/css/fontawesome.min.css')}}">
-    <!-- Feathericon CSS -->
     <link rel="stylesheet" href="{{asset('assets/css/feathericon.min.css')}}">
-
     <link rel="stylesheet" href="{{asset('assets/css/icons.min.css')}}">
-    <!-- Snackbar CSS -->
 	<link rel="stylesheet" href="{{asset('assets/plugins/snackbar/snackbar.min.css')}}">
-    <!-- Sweet Alert css -->
     <link rel="stylesheet" href="{{asset('assets/plugins/sweetalert2/sweetalert2.min.css')}}">
-    <!-- Snackbar Css -->
     <link rel="stylesheet" href="{{asset('assets/plugins/snackbar/snackbar.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/plugins/select2/css/select2.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
@@ -54,7 +48,6 @@
     
 </body>
 <script src="{{asset('assets/plugins/jquery/jquery.min.js')}}"></script>
-
 <script src="{{asset('assets/js/popper.min.js')}}"></script>
 <script src="{{asset('assets/js/bootstrap.min.js')}}"></script>
 <script src="{{asset('assets/plugins/slimscroll/jquery.slimscroll.min.js')}}"></script>

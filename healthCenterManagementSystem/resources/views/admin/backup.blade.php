@@ -12,7 +12,7 @@
     <form action="{{route('backup.store')}}" method="post">
         @csrf
         @method("PUT")
-        <button class="btn btn-success float-right mt-2" type="submit">Create Backup</button>
+        <button class="btn btn-danger float-right mt-2" type="submit">Create Backup</button>
     </form>
 </div>
 
