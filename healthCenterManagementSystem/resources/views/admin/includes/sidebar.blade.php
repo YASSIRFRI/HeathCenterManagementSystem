@@ -3,7 +3,7 @@
         <div id="sidebar-menu" class="sidebar-menu">
             <ul>
                 <li class="menu-title"> 
-                    <span>Main</span>
+                    <span>Services Menu</span>
                 </li>
                 <li class="{{ route_is('dashboard') ? 'active' : '' }}"> 
                     <a href="{{route('dashboard')}}"><i class="far fa-lightbulb"></i> <span>Dashboard</span></a>
@@ -26,7 +26,7 @@
                 @endcan
                 @can('view-products')
 				<li class="submenu">
-					<a href="#"><i class="far fa-lightbulb"></i> <span> Products</span> <span class="fas fa-chevron-down"></span></a>
+					<a href="#"><i class="far fa-lightbulb"></i> <span> Product List</span> <span class="fas fa-chevron-down"></span></a>
 					<ul style="display: none;">
 						<li><a class="{{ route_is(('products.*')) ? 'active' : '' }}" href="{{route('products.index')}}">Products</a></li>
 						@can('create-product')<li><a class="{{ route_is('products.create') ? 'active' : '' }}" href="{{route('products.create')}}">Add Product</a></li>@endcan
@@ -45,7 +45,7 @@
 				@endcan
 				@can('view-supplier')
 				<li class="submenu">
-					<a href="#"><i class="far fa-lightbulb"></i> <span> Supplier</span> <span class="fas fa-chevron-down"></span></a>
+					<a href="#"><i class="far fa-lightbulb"></i> <span> Supplier List</span> <span class="fas fa-chevron-down"></span></a>
 					<ul style="display: none;">
 						<li><a class="{{ route_is('suppliers.*') ? 'active' : '' }}" href="{{route('suppliers.index')}}">Supplier</a></li>
 						@can('create-supplier')<li><a class="{{ route_is('suppliers.create') ? 'active' : '' }}" href="{{route('suppliers.create')}}">Add Supplier</a></li>@endcan

@@ -16,9 +16,7 @@
 @endpush
 
 @section('content')
-<div class="">
-    <div class="col-xl-3 col-sm-6 col-12">
-    </div>
+<div class="background-um6p">
     <div class="col-xl-3 col-sm-6 col-12">
         <div class="card">
             <div class="card-body">
@@ -62,15 +60,14 @@
         </div>
     </div>
 </div>
-<div class="column">
-    <div class="col-md-12 col-lg-7">
+    <div class="col-md-12">
         <div class="card card-table p-3">
             <div class="card-header">
-                <h4 class="card-title ">Recent Consumption History</h4>
+                <h4 class="card-title text-success">Recent Consumption History</h4>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
-                    <table id="sales-table" class="datatable table table-hover table-center mb-0">
+                    <table id="sales-table" class="table table-striped table-center mb-0">
                         <thead>
                             <tr>
                                 <th>Medicine</th>
@@ -86,19 +83,6 @@
             </div>
         </div>
     </div>
-    <div class="col-md-12 col-lg-5">
-        <div class="card card-chart">
-            <div class="card-header">
-                <h4 class="card-title text-center">Graph Report</h4>
-            </div>
-            <div class="card-body">
-                <div style="">
-                    {!! $pieChart->render() !!}
-                </div>
-            </div>
-        </div>
-    </div>	
-</div>
 
 @endsection
 
@@ -118,5 +102,13 @@
         });
     });
 </script> 
-<script src="{{asset('assets/plugins/chart.js/Chart.bundle.min.js')}}"></script>
+<style>
+    .background-um6p {
+        background-image: url("{{asset('assets/img/pergola.jpeg')}}");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        height: 70vh;
+        padding-top: 5vh;
+    }
 @endpush

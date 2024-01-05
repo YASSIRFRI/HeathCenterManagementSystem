@@ -1,7 +1,7 @@
 @extends('admin.layouts.plain')
 @section('content')
-<h1>Pharmacy System</h1>
-<p class="account-subtitle">Register as Sales Person</p>
+<h1>Health Center Management System</h1>
+<p class="account-subtitle">Register</p>
 <form action="{{route('register')}}" method="POST">
 	@csrf
 	<div class="form-group">
