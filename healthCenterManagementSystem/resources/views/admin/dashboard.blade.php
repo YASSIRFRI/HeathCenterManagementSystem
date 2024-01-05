@@ -62,7 +62,7 @@
         </div>
     </div>
 </div>
-<div class="row">
+<div class="column">
     <div class="col-md-12 col-lg-7">
         <div class="card card-table p-3">
             <div class="card-header">
