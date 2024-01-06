@@ -20,5 +20,4 @@
 		<button class="btn btn-danger btn-block" type="submit">Register</button>
 	</div>
 </form>
-<div class="text-center dont-have">Already have an account? <a href="{{route('login')}}">Login</a></div>
 @endsection
